@@ -1,3 +1,4 @@
-import { HomePage } from '@/pages/homePage'
+import { Home } from '@/pages/home'
+import { protectedPage } from '@/features/auth'
 
-export default HomePage
+export default protectedPage(Home)

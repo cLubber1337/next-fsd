@@ -15,16 +15,16 @@ export const UiButton = ({
     <button
       className={clsx(
         className,
-        'px-4 h-10 rounded-md cursor-pointer flex gap-2 items-center justify-center transition-all',
+        'flex h-10 cursor-pointer select-none items-center justify-center gap-2 rounded-md px-4 transition-all',
         {
           primary:
-            'text-white bg-teal-500 shadow shadow-teal-500/30 hover:bg-teal-600 disabled:opacity-50 ' +
-            'disabled:cursor-auto disabled:hover:bg-teal-500 active:bg-teal-400',
+            'bg-teal-500 text-white shadow shadow-teal-500/30 hover:bg-teal-600 disabled:opacity-50 ' +
+            'active:bg-teal-400 disabled:cursor-auto disabled:hover:bg-teal-500',
           secondary:
-            'text-white bg-rose-500 shadow shadow-rose-500/30 hover:bg-rose-600 disabled:opacity-50 active:bg-rose-400',
+            'bg-rose-500 text-white shadow shadow-rose-500/30 hover:bg-rose-600 active:bg-rose-400 disabled:opacity-50',
           outlined:
-            'text-black border border-slate-300 hover:bg-teal-100 active:bg-teal-50',
-        }[variant]
+            'border border-slate-300 text-black hover:bg-teal-100 hover:text-black/70 active:bg-teal-50 ',
+        }[variant],
       )}
       {...props}
     >

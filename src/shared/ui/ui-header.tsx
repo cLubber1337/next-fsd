@@ -10,7 +10,7 @@ export function UiHeader({ className, right }: UiHeaderProps) {
   return (
     <header
       className={clsx(
-        'flex w-full items-center justify-between border-b border-b-slate-500 px-4 py-5',
+        'flex w-full items-center justify-between border-b border-b-slate-500 bg-white px-4 py-5',
         className,
       )}
     >

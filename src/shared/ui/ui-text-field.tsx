@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, PropsWithoutRef, useId } from 'react'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
+import { cn } from '@/lib/utils'
 
 type UiTextFieldProps = {
   className?: string
@@ -15,7 +16,7 @@ export const UiTextField = ({
 }: UiTextFieldProps) => {
   const id = useId()
   return (
-    <div className={clsx(className, 'flex flex-col gap-1')}>
+    <div className={clsx(className, 'flex h-24 flex-col gap-1')}>
       {label && (
         <label htmlFor={id} className="block">
           {label}
@@ -24,7 +25,7 @@ export const UiTextField = ({
       <input
         {...inputProps}
         id={id}
-        className={clsx(
+        className={cn(
           inputProps?.className,
           'h-10 rounded-md border border-slate-300 px-2 outline-none focus:border-teal-600',
           error && 'border-rose-400 focus:border-rose-600',
