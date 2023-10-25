@@ -1,12 +1,21 @@
 import { UiButton } from '@/shared/ui/ui-button'
+import { useToggleBlocking } from '../model/use-toggle-blocking'
 
-type Props = {
-  isBlockingEnable: boolean
-}
-export const ToggleBlockingButton = ({ isBlockingEnable }: Props) => {
+export const ToggleBlockingButton = () => {
+  const { isBlockingEnabled, toggleBlocking, isLoading, isReady } =
+    useToggleBlocking()
+
+  if (!isReady) {
+    return null
+  }
+
   return (
-    <UiButton variant={isBlockingEnable ? 'primary' : 'secondary'}>
-      {isBlockingEnable ? 'Disable Blocking' : 'Enable Blocking'}
+    <UiButton
+      disabled={isLoading}
+      variant={!isBlockingEnabled ? 'primary' : 'secondary'}
+      onClick={() => toggleBlocking()}
+    >
+      {isBlockingEnabled ? 'Disable Blocking' : 'Enable Blocking'}
     </UiButton>
   )
 }
